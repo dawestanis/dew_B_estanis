@@ -40,7 +40,11 @@ header h1 {
     
 }
 
-
+/*Aplicamos un borde de 1pixel solido color grisc claro a todo lo que contiene la clase contenedor.
+Daremos forma a las esquinas de los bordes.
+Establecemos un color de fondo color blanco humo.
+Establecemos tanto la altura como el ancho maximo y centramos el texto.
+*/
 .contenedor {
     border: 1px solid lightgray ;
     border-radius: 1em;
@@ -51,6 +55,7 @@ header h1 {
     line-height: 50px;
     text-align: center;
 }
+
 
 main div {
     display: block;

@@ -1,0 +1,26 @@
+/*
+.contenedor{
+    display: grid;
+    grid-template-rows: 30%, 1fr, 20%;
+    row-gap: 10px;  
+}
+*/
+.publicaciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(1, auto 1fr auto);
+    row-gap: 10px;
+}
+/*
+.publicacion{
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+}
+*/
+#caja1{
+    grid-column: 1/4;
+}
+#caja5{
+    grid-column: 1/4;
+}

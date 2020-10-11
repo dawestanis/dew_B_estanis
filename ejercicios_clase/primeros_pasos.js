@@ -74,6 +74,24 @@ console.log("------------------------------------------------------")
 for (let i = 0; i <= 5; i++) {
     var primernumero = prompt("Dame un numero.");
     var segundonumero = prompt("Dame otro numero.");
-    var resultado = parseInt(primernumero)+ parseInt(segundonumero);
+    var resultado = parseInt(primernumero) + parseInt(segundonumero);
     console.log("El resultado de la suma entre ", primernumero, " y ", segundonumero, " es: ", resultado);
+}
+
+/**
+ * ACTIVIDAD 6
+ * En este reto deberás sumar el valor de 5 números naturales. Para ello, deberás
+ * solicitar al usuario que introduzca un número entero, calcular y sumar los 5 
+ * números siguientes e imprimir el resultado por la consola, y volver a repetir 
+ * este proceso 5 veces más.
+ */
+console.log("------------------------------------------------------")
+
+var numero = prompt("Dame un numero.");
+var sumatorio = 0;
+for (var contador = 0; contador < 5; contador++) {
+    for (var i = 0; i <= 5; i++) {
+        sumatorio = numero + (numero + 1);
+    }
+    console.log(sumatorio);
 }

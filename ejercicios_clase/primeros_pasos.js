@@ -121,15 +121,5 @@ do {
         console.log("Bravo! Has acertado.");
         contador = 0;
     }
-} while (contador > 3);
+} while (contador = 0);
 
-/*
-while(contador<3){
-    if(paiselegido=="Berlin"){
-        console.log("Bravo! Has acertado.");
-    }else{
-        console.log("Fallaste!, intentalo de nuevo.");
-        contador++;
-    }
-}
-*/

@@ -11,7 +11,7 @@
  c) Las suma de las 3 variables es mayor que 10 Y las tres variables son 
  diferentes
  */
-/*
+
 var a = prompt("Introduce el primer nummero.");
 var b = prompt("introduce el segundo numero");
 var c = prompt("introduce el tercer numero");
@@ -63,3 +63,16 @@ function codigofacilito(x) {
 };
 var x = prompt("Dame un numero del 1 al 6.")
 alert(codigofacilito(x));
+
+
+/**
+ * ACTIVIDAD 3
+ *  Realizar un bucle for que actualice una variable i y otra j de la siguiente 
+ * forma:
+ * a) i comienza en 0, j comienza en 20
+ * b) El bucle debe parar cuando i sea mayor que 8 ó j sea menor que 0
+ * c) i se incrementa de 1 en 1, j se decrementa de 3 en 3
+ * d) Dentro del bucle sólo puede estar la sentencia console.log(i, j)
+ */
+
+ 

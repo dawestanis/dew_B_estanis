@@ -87,11 +87,49 @@ for (let i = 0; i <= 5; i++) {
  */
 console.log("------------------------------------------------------")
 
-var numero = prompt("Dame un numero.");
-var sumatorio = 0;
+var numero;
+var sumatorio;
 for (var contador = 0; contador < 5; contador++) {
+    numero = prompt("Dame un numero.");
+    sumatorio = 0;
+
     for (var i = 0; i <= 5; i++) {
-        sumatorio = numero + (numero + 1);
+        sumatorio = sumatorio + (parseInt(numero) + 1) + i;
     }
     console.log(sumatorio);
 }
+
+/**
+ * ACTIVIDAD 7
+ *  Hacer un juego para que el usuario averigüe la capital de un país 
+ * previamente definida. Tiene tres intentos y debe mostrase en pantalla 
+ * si ha acertado o no, incluyendo en este caso el número de intentos que 
+ * le quedan.
+ */
+
+console.log("------------------------------------------------------")
+
+var contador = 3;
+do {
+    var paiselegido = prompt("¿Cual es la capital de Alemania?");
+    if (paiselegido != "Berlin") {
+        contador--;
+        console.log("Fallaste!, intentalo de nuevo. Aun te quedan " +
+            contador + " intentos.");
+
+    } else {
+        console.log("Bravo! Has acertado.");
+        contador = 0;
+    }
+} while (contador > 3);
+
+/*
+while(contador<3){
+    if(paiselegido=="Berlin"){
+        console.log("Bravo! Has acertado.");
+    }else{
+        console.log("Fallaste!, intentalo de nuevo.");
+        contador++;
+    }
+}
+*/

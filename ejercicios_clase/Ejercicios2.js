@@ -184,3 +184,10 @@ function farenheitTocelsius(numero, letra) {
 var numero = prompt("Dame los grados Farenheit que quieres cambiar a Celsius.")
 var letra = prompt("Escribe true si lo quieres con letra.")
 farenheitTocelsius(numero,letra);
+
+
+/**
+ * ACTIVIDAD 8
+ * Genera una lista que contenga el cuadrado de los números pares y el cubo 
+ * de los impares entre 1 y 100(inclusive).
+ */

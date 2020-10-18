@@ -172,18 +172,20 @@ farenheitTocelsius(32);
  */
 
 function farenheitTocelsius(numero, letra) {
-    var respuesta = "";
-    var farenheit = numero;
-    var celsius = alert(farenheit - 32) * 5 / 9;
-    if (letra == false) {
-        respuesta+= "El resultado es: " + celsius;
+    var conUnidad = false;
+    var celsius = ((numero - 32) * 5 / 9);
+    if (letra == "Y") {
+        conUnidad = true;
+    }
+    if (conUnidad) {
+        alert("El resultado es: " + Math.round(parseInt(celsius)) + "ºC");
     } else {
-        respuesta+= "El resultado es: " + celsius + "ºC"
+        alert("El resultado es: " + Math.round(parseInt(celsius)));
     }
 }
 var numero = prompt("Dame los grados Farenheit que quieres cambiar a Celsius.")
-var letra = prompt("Escribe true si lo quieres con letra.")
-farenheitTocelsius(numero,letra);
+var letra = prompt("Escribe Y si lo quieres con letra.")
+farenheitTocelsius(numero, letra);
 
 
 /**
@@ -191,3 +193,5 @@ farenheitTocelsius(numero,letra);
  * Genera una lista que contenga el cuadrado de los números pares y el cubo 
  * de los impares entre 1 y 100(inclusive).
  */
+
+ 

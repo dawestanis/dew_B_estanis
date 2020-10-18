@@ -74,6 +74,7 @@ alert(codigofacilito(x));
  * c) i se incrementa de 1 en 1, j se decrementa de 3 en 3
  * d) Dentro del bucle sólo puede estar la sentencia console.log(i, j)
  */
+/*
 console.log("estoy aqui")
 for (var i = 0; i <= 8; i++) {
     for (var j = 20; 0 < j; j -= 3) {
@@ -98,7 +99,7 @@ for (var i = 0; i <= 8; i++) {
  * c) Cambia el bucle while original para que se ejecute sin tener que asignar 
  * un valor inicial a la variable result.
  */
-
+/*
 let result = 1,
     arg1, arg2, res1, res2;
 while (result > 0) {
@@ -121,7 +122,7 @@ while (result > 0) {
  * 
  * Implementar una función que calcule la letra a partir del número del NIF.
  */
-
+/*
 function comprobarNif(nif) {
     var valido = true;
     var numero;
@@ -155,7 +156,7 @@ function comprobarNif(nif) {
  * que realice esta conversión (comprueba que 32ºF son 0ºC y que 
  * 75.2ºF son 24ºC).
  */
-
+/*
 function farenheitTocelsius(numero) {
     var farenheit = numero;
     var celsius = alert(farenheit - 32) * 5 / 9;
@@ -170,7 +171,7 @@ farenheitTocelsius(32);
  * numérico (p.ej: `24`), mientras que si se indica `True` le añade la 
  * unidad `ºC` (p.ej `24ºC`).
  */
-
+/*
 function farenheitTocelsius(numero, letra) {
     var conUnidad = false;
     var celsius = ((numero - 32) * 5 / 9);
@@ -193,5 +194,102 @@ farenheitTocelsius(numero, letra);
  * Genera una lista que contenga el cuadrado de los números pares y el cubo 
  * de los impares entre 1 y 100(inclusive).
  */
+/*
+ for (var i = 0; i<100; i++){
+     if(i % 2 == 0){ //si el resto de i entre 2 da cero calcula el cuadrado y lo muestra.
+         console.log(i*i);
+     }else{ //si no pues calcula el cubo y lo muestra.
+        console.log(i*i*i);
+     }
+ }
 
- 
+
+ /**
+  * ACTIVIDAD 9
+  * Escribir un programa que proporcione el desglose en el número mínimo de billetes 
+  * y monedas de una cantidad entera cualquiera de euros dada. Recuerda que los billetes 
+  * y monedas de uso legal disponibles hasta 1 euro son de: 
+  * 500, 200, 100, 50, 20, 10, 5, 2 y 1 euros. 
+  * Para ello deben solicitar al usuario un número entero (comprobar que lo es) y 
+  * desglosar la cantidad en el número mínimo de billetes y monedas.
+  */
+
+var importe = prompt("Indica una cantidad: ");
+console.log("El desglose de la cantidad " + importe);
+
+// indicamos todas las monedas posibles
+var monedas = Array(500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.20, 0.10, 0.05, 0.02, 0.01);
+
+// creamos un array con la misma cantidad de monedas
+
+// Este array contendra las monedas a devolver
+
+var cambio = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+// Recorremos todas las monedas
+
+for (var i = 0; i < monedas.length; i++) {
+
+    // Si el importe actual, es superior a la moneda
+
+    if (importe >= monedas[i]) {
+        // obtenemos cantidad de monedas
+
+        cambio[i] = parseInt(importe / monedas[i]);
+
+        // actualizamos el valor del importe que nos queda por didivir
+
+        importe = (importe - (cambio[i] * monedas[i])).toFixed(2);
+    }
+}
+// Bucle para mostrar el resultado
+for (i = 0; i < monedas.length; i++) {
+    if (cambio[i] > 0) {
+
+        if (monedas[i] >= 5)
+
+            console.log("Hay: " + cambio[i] + " billetes de: " + monedas[i] + " euro");
+
+        else
+
+            console.log("Hay: " + cambio[i] + " monedas de: " + monedas[i] + " euro");
+
+    }
+
+}
+
+/**
+ * ACTIVIDAD 10
+ * Muestra la fecha y hora actuales en formato: “DD/MM/YYYY hh:mm:ss TimeZone”.
+ */
+/**
+ * Para obtener el día exacto hago uso de getDate().
+Para obtener el mes exacto le sumo un 1 al final pues estan en forma de array y enero empieza en la posición 0
+Para agregarlo un 0 a la izquierda a month y que se vea como pides solo lo metí en un if / else y comparé su longitud
+ */
+let date = new Date()
+
+let day = date.getDate()
+let month = date.getMonth() + 1
+let year = date.getFullYear()
+
+if (month < 10) {
+    console.log(`${day}-0${month}-${year}`)
+} else {
+    console.log(`${day}-${month}-${year}`)
+}
+
+/**
+ * ACTIVIDAD 11
+ *  Construye una fecha a partir del texto “02/04/2015”. Muestra la fecha con 
+ * console.log, ¿qué obtienes? Prueba ahora con “2015-04-02”.¿Cómo podrías crear 
+ * una fecha con el texto “April 02, 2015”?
+ */
+
+var dia = "02";
+var mes = "04";
+var anio = "2015"
+console.log(dia + "/" + mes + "/" + año);
+console.log(anio + "/" + mes + "/" + dia);
+mes = "Abril";
+console.log(mes + " " + dia + "," + "anio");

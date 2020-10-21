@@ -131,7 +131,9 @@ function actividad5(array) {
  * Crear una función que mezcle los elementos de un array en orden aleatorio. Probar con el array ordenado 
  * creado en el ejercicio anterior
  */
-
+ // Descomenta para usar
+//console.log(arrayOrdenado);
+//actividad6(arrayOrdenado)
 function actividad6(array) {
     //Rango del array
     let min = 0;
@@ -213,7 +215,11 @@ function actividad8(array) {
  * (si el valor se repite, informar sólo sobre la primera vez que aparezca). Probar con un array aleatorio de 
  * 20 números entre -100 y 100.
  */
-
+// Descomenta para usar
+// //Creamos el array Aleatorio
+//  let array9 = arrayAleatorio(20, -100, 100);
+// console.log(array9);
+// console.log(actividad9(array9))
 function actividad9(array) {
     // Le asignamos a los valores maximo y minimo la primera posicion del array
     // Tambien lo hacemos con el indice que será el 0
@@ -251,7 +257,7 @@ function actividad9(array) {
  * primera vez que aparece, o si se trata de un elemento repetido.
  */
 
-function actividad10(array){
+function actividad10(array) {
     // Utilizando la función de la actividad 9 obtenemos el número mayor del array
     // Esto nos servirá para llevar un control de los números repetidos
     let obj_max_min = actividad9(array);
@@ -269,15 +275,84 @@ function actividad10(array){
      *  Si no es null quiere decir que ya se ha repetido, por lo que le seguimos sumando 1 digito al valor
      *  de esa posición.
      */
-    
-    for(i in array){
-        if(repetidos[array[i]]==null){
-            console.log('Primera aparición del numero '+array[i])
-            repetidos[array[i]]=1
-        }else{
-            repetidos[array[i]]+=1
-            console.log('Es la '+repetidos[array[i]] +" aparición del número "+array[i])
+
+    for (i in array) {
+        if (repetidos[array[i]] == null) {
+            console.log('Primera aparición del numero ' + array[i])
+            repetidos[array[i]] = 1
+        } else {
+            repetidos[array[i]] += 1
+            console.log('Es la ' + repetidos[array[i]] + " aparición del número " + array[i])
         }
     }
-    
+
+}
+
+
+/*
+10) Crear un array de 50 números aleatorios enteros aleatorios 
+entre 10 y 20. Para cada elemento, informar si es la primera vez 
+que aparece, o si se trata de un elemento repetido.
+11) Modificar el ejercicio anterior para que si el número ya existía, nos indique cuántas 
+veces había aparecido con anterioridad.
+*/
+
+
+// Descomenta para usar
+
+// let array10 = arrayAleatorio(50, 10, 20);
+// console.log(actividad10(array10));
+
+function actividad10(array) {
+    // Utilizando la función de la actividad 9 obtenemos el número mayor del array
+    // Esto nos servirá para llevar un control de los números repetidos
+    let obj_max_min = actividad9(array);
+    // Creamos un array para los repetidos del tamaño del número máximo del array
+    let repetidos = new Array(obj_max_min.maximo);
+    /**
+     *  El array de repetidos lo vamos a utilizar de la siguiente manera:
+     *  El indice lo vamos a utilizar como referencia con respecto al número del array original
+     *  Por ejemplo, el número 20 (del array original) va en la posición 20 del array de repetidos
+     * 
+     *  Ahí vamos a ir sumandole un digito al valor cada vez que se repita
+     * 
+     *  Al principio preguntamos si es null, esto quiere decir que es la primera vez que se muestra.
+     * 
+     *  Si no es null quiere decir que ya se ha repetido, por lo que le seguimos sumando 1 digito al valor
+     *  de esa posición.
+     */
+
+    for (i in array) {
+        if (repetidos[array[i]] == null) {
+            console.log('Es la primera vez que aparece el número ' + array[i])
+            repetidos[array[i]] = 1
+        } else {
+            repetidos[array[i]] += 1
+            console.log('Es la ' + repetidos[array[i]] + " vez que aparece el número " + array[i])
+        }
+    }
+
+}
+
+/*
+12) Escribir una función que busque la cadena "arriba" en un texto. 
+La función deberá informar si encuentra o no esta cadena en el texto y, 
+si la encuentra, nos deberá mostrar el texto reemplazando "arriba" por "abajo".
+ */
+// QUITAR COMENTARIOS
+actividad12('Hola arriba estoy arriba y me voy para arriba')
+
+function actividad12(cadena) {
+
+    //regex para buscar la cadena arriba 
+    const regex = /(arriba)/
+    // regex para reemplazar 
+    const replaceRegex = new RegExp("arriba", "g")
+
+    if (cadena.match(regex)) {
+
+        console.log(cadena.replaceAll(replaceRegex, 'abajo'));
+    } else {
+        console.log('false')
+    }
 }

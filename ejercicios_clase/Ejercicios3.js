@@ -276,7 +276,7 @@ function actividad10(array) {
      *  de esa posición.
      */
 
-    for (i in array) {
+    for (i in array) { // recorremos el array
         if (repetidos[array[i]] == null) {
             console.log('Primera aparición del numero ' + array[i])
             repetidos[array[i]] = 1
@@ -340,19 +340,19 @@ La función deberá informar si encuentra o no esta cadena en el texto y,
 si la encuentra, nos deberá mostrar el texto reemplazando "arriba" por "abajo".
  */
 // QUITAR COMENTARIOS
-actividad12('Hola arriba estoy arriba y me voy para arriba')
+actividad12('Buenas caballero, su habitación esta hacia arriba.')
 
 function actividad12(cadena) {
 
-    //regex para buscar la cadena arriba 
+    //este es el regex de "arriba"
     const regex = /(arriba)/
-    // regex para reemplazar 
+    // este es el regex para reemplazar 
     const replaceRegex = new RegExp("arriba", "g")
 
-    if (cadena.match(regex)) {
+    if (cadena.match(regex)) { //si en cadena hay alguna cohincidencia con regex, la reemplaza por "abajo"
 
         console.log(cadena.replaceAll(replaceRegex, 'abajo'));
     } else {
-        console.log('false')
+        console.log('false') //sino, te devuelve false
     }
 }

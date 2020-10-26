@@ -356,3 +356,25 @@ function actividad12(cadena) {
         console.log('false') //sino, te devuelve false
     }
 }
+
+
+
+//MAP: almacena pares clave-valor
+var miMapa = new Map();
+miMapa.set(0, "cero");
+miMapa.set(1,"uno");
+for(var [clave,valor] of miMapa){
+    alert(clave + " " + valor);
+
+}
+
+//Mostrará 2 alertas; primero con "0 = cero" u segimdp cpm "1 = uno"
+for(var clave of miMapa.keys()){
+    añert(clave);
+}
+
+//Mostrará 2 alertas; primero con "0"  y segundo con "1"
+for (var valor of miMapa.values()){
+    alert(valor);
+}
+

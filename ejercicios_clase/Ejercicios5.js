@@ -70,3 +70,5 @@ var listaViajeros =[primerViajero, segundoViajero, tercerViajero];
 for(i in listaViajeros){
     console.log(Object.values(listaViajeros[i]));
 }
+
+

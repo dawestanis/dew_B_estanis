@@ -1,0 +1,22 @@
+console.log(2 > 3 + 2);
+console.log("El tipo de dato es" + typeof(2 > 3 + 2));
+console.log(1 + false + 3.5);
+console.log("El tipo de dato es" + typeof(1 + false + 3.5));
+console.log(4 * true + 2);
+console.log("El tipo de dato es" + typeof(4 * true + 2));
+console.log(5 / 10);
+console.log("El tipo de dato es" + typeof(5 / 10));
+console.log(10 > 2 > 0);
+console.log("El tipo de dato es" + typeof(10 > 2 > 0));
+console.log(15 < 3 * 10);
+console.log("El tipo de dato es" + typeof(15 < 3 * 10));
+//console.log(3 * hola * 2);
+console.log(5 / "hola");
+console.log("El tipo de dato es" + typeof(5 / "hola"));
+console.log(Math.PI * Math.pow(3, 2));
+console.log("El tipo de dato es" + typeof(Math.PI * Math.pow(3, 2)));
+console.log(Math.sqrt(25));
+console.log("El tipo de dato es" + typeof(Math.sqrt(25)));
+console.log("Tienes" + 23 + "años");
+console.log("El tipo de dato es" + typeof("Tienes" + 23 + "años"));
+

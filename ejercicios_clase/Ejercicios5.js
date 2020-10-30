@@ -64,17 +64,21 @@ function mostrarDatos(){
     return "Datos del viajero: " + listaViajeros.nombre + listaViajeros.apellidos + listaViajeros.edad;
 }
 */
+
+//Creamos las instancias de viajeros.
 var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados = ["Francia", "Paris"]);
 var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25, paisesVisitados = ["España", "Madrid"]);
 var tercerViajero = new crearViajero("Rolando", "Carballo Ruíz", 34, paisesVisitados = ["Portugal", "Lisboa"]);
 
 var listaViajeros = [primerViajero, segundoViajero, tercerViajero]; // creamos la variable listaViajeros e introducimos los tres parametros.
 
-for (i in listaViajeros) {
+for (i in listaViajeros) { //recorremos la lista de viajeros y la mostramos por consola.
     console.log(Object.values(listaViajeros[i]));
 }
 
-//Vamos a crear un mapa 
+
+// 2.3- Ahora crea otra estructura para guardar los datos de los viajeros, los identificaremos por un código de cliente de nuestra agencia
+//Vamos a crear un mapa con los viajeros 1 y 2
 var agencia = new Map();
 agencia.set(1, viajero1);
 agencia.set(2, viajero2);
@@ -92,11 +96,13 @@ for (var valor of agencia.values()) {
     console.log(valor);
 }
 
+// 2.4.1- Crear un nuevo viajero (debe comprobar si el código de cliente ya existe. Si es así, muestra un mensaje y no lo inserta)
+var cuartoViajero = new crearViajero("Albertito", "Hdez Glez", 23, paisesVisitados=["Japón", "Tokio"]);
+if (agencia.values)
+agencia.set(3, cuartoViajero);
 
-function crearViajero(id, nombre, apellido, edad, paisesVisitados) {
 
 
-}
 
 
 

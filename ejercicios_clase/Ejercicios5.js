@@ -65,10 +65,105 @@ var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados=["
 var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25,paisesVisitados=["España","Madrid"]);
 var tercerViajero = new crearViajero("Rolando", "Carballo Ruíz", 34, paisesVisitados=["Portugal","Lisboa"]);
 
-var listaViajeros =[primerViajero, segundoViajero, tercerViajero];
+var listaViajeros =[primerViajero, segundoViajero, tercerViajero];// creamos la variable listaViajeros e introducimos los tres parametros.
 
 for(i in listaViajeros){
     console.log(Object.values(listaViajeros[i]));
 }
 
 
+/**
+ * ACTIVIDAD 3
+
+Analiza el siguiente código y comenta las sentencias.
+
+const tropicalBasket = {
+
+    bananas: 3,
+
+    papayas: 0,
+
+    oranges: 7,
+
+    watermelons: 4
+
+};
+
+const smallBasket = {
+
+    strawberries: 8,
+
+    grapes: 12 };
+
+const getFruitsDescription = (basket) => {
+
+    const fruitsListed = Object.keys(basket);
+
+    const fruitsAvailable = fruitsListed.filter((fruit) => {return basket[fruit] > 0;
+
+    });
+
+    return 'This basket has: ' + fruitsAvailable.join(', ');
+
+};
+
+console.log(getFruitsDescription(tropicalBasket)); console.log(getFruitsDescription(smallBasket));
+
+ 
+
+ACTIVIDAD 4
+
+Analiza el siguiente código y comenta las sentencias.
+
+const animal = {};
+
+Object.defineProperty(animal, 'isHuman', {
+
+    value: false,
+
+    enumerable: false });
+
+const dinosaur = Object.create(animal);
+
+Object.defineProperty(dinosaur, 'isExtinct', {
+
+    value: true,
+
+    enumerable: false });
+
+const tRex = Object.create(dinosaur);
+
+Object.defineProperty(tRex, 'legs', {
+
+    value: 4,
+
+    enumerable: false });
+
+function getAllPropertiesOf(something) {
+
+    let properties = [];
+
+    let proto = something;
+
+    while (proto !== Object.prototype) {
+
+        properties = properties.concat(Object.getOwnPropertyNames(proto));
+
+        proto = Object.getPrototypeOf(proto);     }
+
+    return properties; }
+
+console.log(getAllPropertiesOf(tRex));
+
+ 
+
+ACTIVIDAD 5
+
+Realiza la actividad 1 utilizando clases.
+
+ 
+
+ACTIVIDAD 6
+
+Realiza la actividad 2 utilizando clases y gestión de errores.
+ */

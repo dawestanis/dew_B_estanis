@@ -50,26 +50,54 @@ alert("Se ha creado la cuenta con exito: "
  * 
  */
 
- function crearViajero(nombre, apellidos, edad, paisesVisitados){
+function crearViajero(nombre, apellidos, edad, paisesVisitados) {
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.edad = edad;
-    this.paisesVisitados=paisesVisitados;
- }
+    this.paisesVisitados = paisesVisitados;
+    var viajeroToString = function (array) {
+        console.log("Viajero: " + this.nombre + this.apellidos + "\nEdad: " + this.edad)
+    }
+}
 /*
 function mostrarDatos(){
     return "Datos del viajero: " + listaViajeros.nombre + listaViajeros.apellidos + listaViajeros.edad;
 }
 */
-var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados=["Francia","Paris"]);
-var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25,paisesVisitados=["España","Madrid"]);
-var tercerViajero = new crearViajero("Rolando", "Carballo Ruíz", 34, paisesVisitados=["Portugal","Lisboa"]);
+var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados = ["Francia", "Paris"]);
+var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25, paisesVisitados = ["España", "Madrid"]);
+var tercerViajero = new crearViajero("Rolando", "Carballo Ruíz", 34, paisesVisitados = ["Portugal", "Lisboa"]);
 
-var listaViajeros =[primerViajero, segundoViajero, tercerViajero];// creamos la variable listaViajeros e introducimos los tres parametros.
+var listaViajeros = [primerViajero, segundoViajero, tercerViajero]; // creamos la variable listaViajeros e introducimos los tres parametros.
 
-for(i in listaViajeros){
+for (i in listaViajeros) {
     console.log(Object.values(listaViajeros[i]));
 }
+
+//Vamos a crear un mapa 
+var agencia = new Map();
+agencia.set(1, viajero1);
+agencia.set(2, viajero2);
+
+for (i = 0; i < listaViajeros.length; i++) {
+    console.log(Object.values(listaViajeros[i]));
+    // ViajerotoString(listaViajeros);
+}
+
+for (var [key, value] of agencia) {
+    console.log( /*key + " "*/ +value);
+}
+
+for (var valor of agencia.values()) {
+    console.log(valor);
+}
+
+
+function crearViajero(id, nombre, apellido, edad, paisesVisitados) {
+
+
+}
+
 
 
 /**

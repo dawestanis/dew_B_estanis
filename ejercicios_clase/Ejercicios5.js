@@ -50,21 +50,79 @@ alert("Se ha creado la cuenta con exito: "
  * 
  */
 
-function crearViajero(nombre, apellidos, edad, paisesVisitados) {
+// 1- Comprobar que existe el viajero
+// 2- Si no existe lo creas
+// 3- Se guarda en la lista
+// 4- Crear funcion eliminar viajero
+
+let mapaViajeros = new Map();
+
+function viajero(id, nombre, apellidos, edad) { // Esta es "la clase crearViajero"
+    this.id = id;
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.edad = edad;
-    this.paisesVisitados = paisesVisitados;
-    var viajeroToString = function (array) {
-        console.log("Viajero: " + this.nombre + this.apellidos + "\nEdad: " + this.edad)
+    this.paisesVisitados = new Array();
+}
+
+// Creamos los viajeros
+var primerViajero = new crearViajero(1, "Pepe", "Glez Hdez", 38);
+var segundoViajero = new crearViajero(2, "Juan", "Blas Ruano", 25);
+var tercerViajero = new crearViajero(3, "Rolando", "Carballo Ruíz", 34);
+
+function exiteViajero(idRecibido) {
+    let estaDentro = false;
+    for (let [id, viajero] of mapaViajeros) {
+        if (idRecibido == id) {
+            estaDentro = true;
+        }
+    }
+    return estaDentro;
+}
+
+function crearViajero(id, nombre, apellidos, edad) {
+    let nuevoViajero = new viajero(id, nombre, apellidos, edad);
+    mapaViajeros.set(id, nuevoViajero);
+}
+
+function mostrarInfo() {
+    for (let [id, viajero] of mapaViajeros) { //recorremos la lista de viajeros y la mostramos por consola.
+        //console.log(Object.values(mapaViajeros.get(id)));
+        console.log("Datos del viajero: " +
+            "\nNombre: " + viajero.nombre +
+            "\nApellidos: " + viajero.apellidos +
+            "\nEdad: " + viajero.edad +
+            "\nPaises visitados: " + viajero.paisesVisitados);
     }
 }
-/*
-function mostrarDatos(){
-    return "Datos del viajero: " + listaViajeros.nombre + listaViajeros.apellidos + listaViajeros.edad;
-}
-*/
 
+function agregarPaisVisitado(id, pais) {
+    var viajero; //creamos la variable en la que guardaremos el viajero si existe.
+    if (existeViajero(id)) { //comprobamos que el viajero con dicho id existe.
+        for (let [idMapa, viajeroMapa] of mapaViajeros) {//recorremos el mapa.
+            if (id == idMapa) { //si el id recibido es corresponde con el que se encuentra en el mapa lo guardamos en viajero.
+                viajero = viajeroMapa;
+            }
+        }
+
+    }
+
+}
+
+function hayPaisEnLista(viajero, pais){
+    let indice;
+    if(viajero.paisesVisitados.length != undefined){
+        for(let i=0; i<viajero.paisesVisitados.length; i++){
+            if(pais==viajero.paisesVisitados[i]){
+                indice = i;
+            }
+        }
+    }
+}
+
+mostrarInfo();
+
+/*
 //Creamos las instancias de viajeros.
 var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados = ["Francia", "Paris"]);
 var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25, paisesVisitados = ["España", "Madrid"]);
@@ -77,31 +135,50 @@ for (i in listaViajeros) { //recorremos la lista de viajeros y la mostramos por 
 }
 
 
-// 2.3- Ahora crea otra estructura para guardar los datos de los viajeros, los identificaremos por un código de cliente de nuestra agencia
-//Vamos a crear un mapa con los viajeros 1 y 2
-var agencia = new Map();
-agencia.set(1, viajero1);
-agencia.set(2, viajero2);
+console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
 
+
+//otra opcion para mostrar la lista de viajeros.
 for (i = 0; i < listaViajeros.length; i++) {
     console.log(Object.values(listaViajeros[i]));
     // ViajerotoString(listaViajeros);
 }
 
-for (var [key, value] of agencia) {
-    console.log( /*key + " "*/ +value);
-}
+console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
 
+
+// 2.3- Ahora crea otra estructura para guardar los datos de los viajeros, los identificaremos por un código de cliente de nuestra agencia
+//Vamos a crear un mapa con los viajeros 1 y 2
+var agencia = new Map();
+agencia.set(1, primerViajero);
+agencia.set(2, segundoViajero);
+agencia.set(3, tercerViajero);
+// recorremos el  mapa y nos muestra el valor.
 for (var valor of agencia.values()) {
     console.log(valor);
 }
 
 // 2.4.1- Crear un nuevo viajero (debe comprobar si el código de cliente ya existe. Si es así, muestra un mensaje y no lo inserta)
 var cuartoViajero = new crearViajero("Albertito", "Hdez Glez", 23, paisesVisitados=["Japón", "Tokio"]);
-if (agencia.values)
-agencia.set(3, cuartoViajero);
 
+function setViajero(id, nombre, apellidos, edad, paisVisitado){
+    for(i in agencia){
+        if (id == agencia.get(id)){
+            alert("El id ya existe.");
+        }else{
+            var viajeroNuevo = new crearViajero(id, nombre, apellidos, edad, paisVisitado);
+            agencia.set(viajeroNuevo);
+        }
+    } 
+}
 
+setViajero(1, "Pedro", "Sanchinflas", 50, paisVisitados =["España","Lanzarote"]);
+
+console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
+for (var valor of agencia.values()) {
+    console.log(valor);
+}
+*/
 
 
 

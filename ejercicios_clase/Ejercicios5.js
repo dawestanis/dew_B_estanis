@@ -50,11 +50,6 @@ alert("Se ha creado la cuenta con exito: "
  * 
  */
 
-// 1- Comprobar que existe el viajero
-// 2- Si no existe lo creas
-// 3- Se guarda en la lista
-// 4- Crear funcion eliminar viajero
-
 let mapaViajeros = new Map();
 
 function viajero(id, nombre, apellidos, edad) { // Esta es "la clase crearViajero"
@@ -145,59 +140,6 @@ function eliminarPais(cod, pais){
         }
     }
 }
-/*
-var listaViajeros = [primerViajero, segundoViajero, tercerViajero]; // creamos la variable listaViajeros e introducimos los tres parametros.
-
-for (i in listaViajeros) { //recorremos la lista de viajeros y la mostramos por consola.
-    console.log(Object.values(listaViajeros[i]));
-}
-
-
-console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
-
-
-//otra opcion para mostrar la lista de viajeros.
-for (i = 0; i < listaViajeros.length; i++) {
-    console.log(Object.values(listaViajeros[i]));
-    // ViajerotoString(listaViajeros);
-}
-
-console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
-
-
-// 2.3- Ahora crea otra estructura para guardar los datos de los viajeros, los identificaremos por un código de cliente de nuestra agencia
-//Vamos a crear un mapa con los viajeros 1 y 2
-var agencia = new Map();
-agencia.set(1, primerViajero);
-agencia.set(2, segundoViajero);
-agencia.set(3, tercerViajero);
-// recorremos el  mapa y nos muestra el valor.
-for (var valor of agencia.values()) {
-    console.log(valor);
-}
-
-// 2.4.1- Crear un nuevo viajero (debe comprobar si el código de cliente ya existe. Si es así, muestra un mensaje y no lo inserta)
-var cuartoViajero = new crearViajero("Albertito", "Hdez Glez", 23, paisesVisitados=["Japón", "Tokio"]);
-
-function setViajero(id, nombre, apellidos, edad, paisVisitado){
-    for(i in agencia){
-        if (id == agencia.get(id)){
-            alert("El id ya existe.");
-        }else{
-            var viajeroNuevo = new crearViajero(id, nombre, apellidos, edad, paisVisitado);
-            agencia.set(viajeroNuevo);
-        }
-    } 
-}
-
-setViajero(1, "Pedro", "Sanchinflas", 50, paisVisitados =["España","Lanzarote"]);
-
-console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
-for (var valor of agencia.values()) {
-    console.log(valor);
-}
-*/
-
 
 
 
@@ -205,8 +147,8 @@ for (var valor of agencia.values()) {
  * ACTIVIDAD 3
 
 Analiza el siguiente código y comenta las sentencias.
-
-const tropicalBasket = { 
+*/
+const tropicalBasket = {  //se crea la variable costante como mapa tropicalBasket y se le dan unos atributos.
 
     bananas: 3,
 
@@ -224,68 +166,68 @@ const smallBasket = {
 
     grapes: 12 };
 
-const getFruitsDescription = (basket) => {
+const getFruitsDescription = (basket) => { //usando una funcion flecha que recibe un parametro.
 
-    const fruitsListed = Object.keys(basket);
+    const fruitsListed = Object.keys(basket); //obtenemos las claves del mapa que recibimos como parametro.
 
-    const fruitsAvailable = fruitsListed.filter((fruit) => {return basket[fruit] > 0;
+    const fruitsAvailable = fruitsListed.filter((fruit) => {return basket[fruit] > 0; //guardamos en una variable filtrando los datos por futas.
 
     });
 
-    return 'This basket has: ' + fruitsAvailable.join(', ');
+    return 'This basket has: ' + fruitsAvailable.join(', '); //devuelve un mensaje en el que se concatena una cadena con fruitsAvailable.
 
 };
 
-console.log(getFruitsDescription(tropicalBasket)); console.log(getFruitsDescription(smallBasket));
+console.log(getFruitsDescription(tropicalBasket)); console.log(getFruitsDescription(smallBasket));// se hace una llamada a las funcion getFruitDescription capturando tropicalBasket y smallBasket y se muestra por consola. 
 
  
-
+/*
 ACTIVIDAD 4
 
 Analiza el siguiente código y comenta las sentencias.
+*/
+const animal = {}; //se crea el objeto animal.
 
-const animal = {};
-
-Object.defineProperty(animal, 'isHuman', {
+Object.defineProperty(animal, 'isHuman', { //se establecen los valores y propiedades del objeto animal.
 
     value: false,
 
     enumerable: false });
 
-const dinosaur = Object.create(animal);
+const dinosaur = Object.create(animal); //se crea el objeto animal dinosaur.
 
-Object.defineProperty(dinosaur, 'isExtinct', {
+Object.defineProperty(dinosaur, 'isExtinct', { //se establecen los valores y propiedades del objeto dinosaur.
 
     value: true,
 
     enumerable: false });
 
-const tRex = Object.create(dinosaur);
+const tRex = Object.create(dinosaur); //se crea el objeto dinosaurio tRex.
 
-Object.defineProperty(tRex, 'legs', {
+Object.defineProperty(tRex, 'legs', { //se establecen los valores y propiedades del objeto tRex
 
     value: 4,
 
     enumerable: false });
 
-function getAllPropertiesOf(something) {
+function getAllPropertiesOf(something) { //se crea la funcion para obtener todas las propiedades y se le pasa un parametro.
 
-    let properties = [];
+    let properties = []; //se crea un array
 
-    let proto = something;
+    let proto = something; //declara una variable a la que se le pasa el parametro recibido.
 
-    while (proto !== Object.prototype) {
+    while (proto !== Object.prototype) { //mientras que el parametro recibido que tenemos guardado en la variable proto no sea igual al ptorotipo de objeto entonces se ejecuta el codigo dentro del while
 
-        properties = properties.concat(Object.getOwnPropertyNames(proto));
+        properties = properties.concat(Object.getOwnPropertyNames(proto));//introducimos en el array properties los valores extraidos de proto.
 
         proto = Object.getPrototypeOf(proto);     }
 
     return properties; }
 
-console.log(getAllPropertiesOf(tRex));
+console.log(getAllPropertiesOf(tRex)); //mostramos por consola todas las propiedades de tRex
 
  
-
+/*
 ACTIVIDAD 5
 
 Realiza la actividad 1 utilizando clases.

@@ -110,7 +110,7 @@ function agregarPaisVisitado(id, pais) {
 }
 
 function hayPaisEnLista(viajero, pais){
-    let indice;
+    let indice; //creamos variable que almacenará el indice en el que está el pais en el array.
     if(viajero.paisesVisitados.length != undefined){
         for(let i=0; i<viajero.paisesVisitados.length; i++){
             if(pais==viajero.paisesVisitados[i]){
@@ -118,16 +118,13 @@ function hayPaisEnLista(viajero, pais){
             }
         }
     }
+    //
+    return indice; // si no encuentra un pais, nos devuelve undefined.
 }
 
 mostrarInfo();
 
 /*
-//Creamos las instancias de viajeros.
-var primerViajero = new crearViajero("Pepe", "Glez Hdez", 38, paisesVisitados = ["Francia", "Paris"]);
-var segundoViajero = new crearViajero("Juan", "Blas Ruano", 25, paisesVisitados = ["España", "Madrid"]);
-var tercerViajero = new crearViajero("Rolando", "Carballo Ruíz", 34, paisesVisitados = ["Portugal", "Lisboa"]);
-
 var listaViajeros = [primerViajero, segundoViajero, tercerViajero]; // creamos la variable listaViajeros e introducimos los tres parametros.
 
 for (i in listaViajeros) { //recorremos la lista de viajeros y la mostramos por consola.
@@ -188,7 +185,7 @@ for (var valor of agencia.values()) {
 
 Analiza el siguiente código y comenta las sentencias.
 
-const tropicalBasket = {
+const tropicalBasket = { 
 
     bananas: 3,
 

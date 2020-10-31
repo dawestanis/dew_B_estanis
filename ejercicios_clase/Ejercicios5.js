@@ -9,7 +9,7 @@
  * c) Mostrar un mensaje informando de que se ha creado la nueva cuenta bancaria y de los datos asociados a la cuenta bancaria creada.
  */
 
-/*
+/
 function cuentaBancaria(nombre, apellidos, saldo) {
     this.nombre = nombre;
     this.apellidos = apellidos;
@@ -81,8 +81,8 @@ function exiteViajero(idRecibido) {
 }
 
 function crearViajero(id, nombre, apellidos, edad) {
-    let nuevoViajero = new viajero(id, nombre, apellidos, edad);
-    mapaViajeros.set(id, nuevoViajero);
+    let nuevoViajero = new viajero(id, nombre, apellidos, edad);//creamos un nuevo viajero.
+    mapaViajeros.set(id, nuevoViajero); //establecemos los datos
 }
 
 function mostrarInfo() {
@@ -96,18 +96,6 @@ function mostrarInfo() {
     }
 }
 
-function agregarPaisVisitado(id, pais) {
-    var viajero; //creamos la variable en la que guardaremos el viajero si existe.
-    if (existeViajero(id)) { //comprobamos que el viajero con dicho id existe.
-        for (let [idMapa, viajeroMapa] of mapaViajeros) {//recorremos el mapa.
-            if (id == idMapa) { //si el id recibido es corresponde con el que se encuentra en el mapa lo guardamos en viajero.
-                viajero = viajeroMapa;
-            }
-        }
-
-    }
-
-}
 
 function hayPaisEnLista(viajero, pais){
     let indice; //creamos variable que almacenará el indice en el que está el pais en el array.
@@ -122,8 +110,41 @@ function hayPaisEnLista(viajero, pais){
     return indice; // si no encuentra un pais, nos devuelve undefined.
 }
 
+function agregarPaisVisitado(id, pais) {
+    var viajero; //creamos la variable en la que guardaremos el viajero si existe.
+    if (existeViajero(id)) { //comprobamos que el viajero con dicho id existe.
+        viajero = mapaViajeros.get(id);
+        //antes de introducir el vivajero comprobamos que no esta en la lista.
+        if(hayPaisEnLista(viajero, pais)==undefined){
+            viajero.paisesVisitados.push(pais);
+            alert("Añadido correctamente en " + viajero.nombre + " " + viajero.apellidos );
+        }else{
+            alert("Este pais ya esta en la lista.")
+        }
+    }else{
+        alert("No se ha encontrado el viajero.")
+    }
+}
+
 mostrarInfo();
 
+
+function eliminarPais(cod, pais){
+    if(existeViajero(cod)){
+        let viajero = mapaViajeros.get(cod);
+
+        if(hayPaisEnLista(viajero, pais) != undefined){ // si se encontró el pais en la lista
+            viajero.paisesVisitados.splice( hayPaisEnLista(viajero, pais) , 1);
+            /*
+            Este metodo permite borrar una posicion concreta del mapa.
+            Se le debe especificar la posicion a borrar y la cantidad de elementos.
+            */
+            alert("Pais eliminado.");
+        }else{
+            alert("Pais no encontrado.");
+        }
+    }
+}
 /*
 var listaViajeros = [primerViajero, segundoViajero, tercerViajero]; // creamos la variable listaViajeros e introducimos los tres parametros.
 

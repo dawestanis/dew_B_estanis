@@ -9,7 +9,7 @@
  * c) Mostrar un mensaje informando de que se ha creado la nueva cuenta bancaria y de los datos asociados a la cuenta bancaria creada.
  */
 
-/
+
 function cuentaBancaria(nombre, apellidos, saldo) {
     this.nombre = nombre;
     this.apellidos = apellidos;

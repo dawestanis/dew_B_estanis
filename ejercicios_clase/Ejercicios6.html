@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+
+    
+        <label for="abrir"></label>
+        <button id="abrir" onclick="abrirVentana()">Abrir</button>
+
+        <button onclick="goBack()">Go Back</button>
+        <button onclick="goForward()">Go Forward</button>
+    
+    <script>
+        // ACTIVIDAD 1 
+        /**
+        Crea dos botones en un documento html que al pulsar, uno abra una nueva ventana de ancho 200px y alto 100px con la siguiente información:
+        Nombre de la ventana, Ancho externo, Alto externo, Ancho interno, Alto interno, Scroll H, Scroll V, Distancia desde la izquierda y Distancia desde arriba.
+        Y el otro botón que sea capaz de cerrar esa nueva ventana abierta.
+        */
+         function abrirVentana() { 
+            var miVentana=window.open("","", "width=200 , height=100"); //creamos la variable miVentana y guardamos lo que nos devuelve el metodo open de window.
+            miVentana.document.write("Nombre de ventana: " + miVentana.window.name 
+            + "Ancho externo: " + miVentana.screen.width
+            + "Alto externo: " + miVentana.screen.height
+            + "Ancho interno: " + miVentana.window.innerWidth
+            + "Alto interno: " + miVentana.window.innerHeight
+            + "Scroll horizontal: " + miVentana.window.scrollX
+            + "Scroll vertical: " + miVentana.window.scrollY
+            + "Distancia desde la izquierda: " + miVentana.window.screenX
+            + "Distancia desde arriba: " + miVentana.window.screenY); //imprimimos en la ventana los datos.
+            miVentana.focus();
+        }
+
+        function cerrarVentana(){
+            var miVentana = miVentana.close();
+        }
+
+        // 
+    </script>
+
+</body>
+
+</html>

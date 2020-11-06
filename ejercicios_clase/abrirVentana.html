@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Abrir ventana</title>
+    <!--<script src="dew_b_estanis/modernizr-custom(2).js"></script> -->
 
 </head>
+
 <body>
+
     <form action="post">
         <label for="abrir"></label>
         <button id="abrir" onclick="abrirVentana()">Abrir</button>
+
+        <button onclick="goBack()">Go Back</button>
+        <button onclick="goForward()">Go Forward</button>
     </form>
     <script>
-        function abrirVentana(url){
-            window.open("https://www.google.com/intl/es/gmail/about/#");
+        function abrirVentana(url) {
+            window.open("https://www.google.com/intl/es/gmail/about/#", "width=200", "height=200");
         }
 
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            wodow.history.Forward();
+
+        }
+
+
+        /*
+        function comprobarModernizr() {
+            if(modernizr.flash()){
+                console.log("Soporta flash.")
+            }else{
+                console.log("No se soporta flash.")
+            }
+        }
+
+        alert(comprobarModernizr());
+        */
+
+        alert("El ancho de la pantalla es " + screen.width);
+        alert("El alto de la pantalla es " + screen.height);
+        var navegador;// definir aqui el navegador.
+        function comprobarFullScreen(navegador){
+            if(screen.width== screen.availWidth && screen.height==screen.availHeight){
+                alert("Está a fulscreen")
+            }else{
+                alert("No está a fullscreen")
+            }
+        }
+        alert(comprobarFullScreen(navegador));
     </script>
+
+
+
+
+
+
+
 </body>
+
 </html>

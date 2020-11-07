@@ -9,13 +9,15 @@
 </head>
 
 <body>
-
-    
         <label for="abrir"></label>
         <button id="abrir" onclick="abrirVentana()">Abrir</button>
 
-        <button onclick="goBack()">Go Back</button>
-        <button onclick="goForward()">Go Forward</button>
+        <button onclick="paginaAnterior()">Página Anterior</button>
+        <button onclick="paginaSiguiente()">Página Siguiente</button>
+        <button><a href="https://www.google.es/">Google</a></button>
+        <button onclick="paginaElegida()">Ir a...</button>
+        <button onclick="historial()">Mostrar historial</button></br></br>
+        <button onclick="infoNavegador()">Desplegar información del navegador</button>
     
     <script>
         // ACTIVIDAD 1 
@@ -42,7 +44,48 @@
             var miVentana = miVentana.close();
         }
 
-        // 
+        // ACTIVIDAD 2
+        /**
+         * Crea tres botones en un documento html que al pulsar, uno te permita visitar la página anterior. Otro que al pulsar 
+         * te permita visitar la página siguiente. Y un tercero que permita ir a una página concreta que el usuario haya introducido.
+         * Muestra la cantidad de páginas del historial.
+        */
+
+        function paginaAnterior(){ //Te devuelve a la pagina anterior.
+            history.back();
+        }
+
+        function paginaSiguiente(){
+            history.forward();
+        }
+    
+        function historial(){
+            var numeroDeEntradas = window.history.length;
+            alert(numeroDeEntradas);
+        }
+
+        function paginaElegida(){
+            alert("Este es el numero de historial, elige!");
+            historial();
+            var url = parseInt(prompt("Dame una url"));
+            window.open(url);
+        }
+
+        // ACTIVIDAD 3
+        /**
+         * Crea un botón en un documento html que al pulsar, el script averigüe si el usuario está conectado a Internet y le 
+         * devuelva en una nueva ventana el nombre y versión del navegador, el idioma y si tiene activadas o no las cookies y Java.
+        */
+
+        function infoNavegador(){
+            var infoVentana = window.open("","", "width=500 , height=500");
+            infoVentana.document.write("Nombre del navegador: " + infoVentana.navigator.appName +"<br>"
+            + "Version del navegador: " + infoVentana.navigator.appVersion +"<br>"
+            + "Cookies activadas: " + infoVentana.navigator.cookieEnabled +"<br>"
+            + "Conexión a Internet: " + infoVentana.navigator.onLine +"<br>"
+            + "Lenguaje: " + infoVentana.navigator.language +"<br>"
+            + "Java activado: " + infoVentana.navigator.javaEnabled());
+        }
     </script>
 
 </body>

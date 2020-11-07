@@ -17,7 +17,9 @@
         <button><a href="https://www.google.es/">Google</a></button>
         <button onclick="paginaElegida()">Ir a...</button>
         <button onclick="historial()">Mostrar historial</button></br></br>
-        <button onclick="infoNavegador()">Desplegar información del navegador</button>
+        <button onclick="infoNavegador()">Desplegar información del navegador</button></br></br>
+
+        <button onclick="asignarLocalizacion()">Boton Actividad 4</button>
     
     <script>
         // ACTIVIDAD 1 
@@ -86,6 +88,21 @@
             + "Lenguaje: " + infoVentana.navigator.language +"<br>"
             + "Java activado: " + infoVentana.navigator.javaEnabled());
         }
+
+
+        // ACTIVIDAD 4
+        /**
+         * Usando location, crea un botón en un documento html que al pulsar, el script asigne la web www.google.com y se pueda 
+         * ver el historial de la ventana. Crea otro botón igual, pero que no se pueda ver el historial de la venta.
+        */
+       function asignarLocalizacion(){
+           var ventana = window.open("","", "width=500 , height=500");
+           ventana.location.assign("https://www.google.com/");
+           ventana.historial();
+       }
+
+
+       
     </script>
 
 </body>

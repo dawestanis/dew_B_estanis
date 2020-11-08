@@ -110,7 +110,7 @@
 
        function saberTamañoBarraTareas(){
            var ventana = window.open("","", "width=500 , height=500");
-           alert("El tamaño de la barra de tareas de Windows es: " + window.screen.availWidth);
+           ventana.document.write("El tamaño de la barra de tareas de Windows es: " + ventana.screen.availWidth);
        }
 
 

@@ -18,8 +18,8 @@
         <button onclick="paginaElegida()">Ir a...</button>
         <button onclick="historial()">Mostrar historial</button></br></br>
         <button onclick="infoNavegador()">Desplegar información del navegador</button></br></br>
-
-        <button onclick="asignarLocalizacion()">Boton Actividad 4</button>
+        <button onclick="asignarLocalizacion()">Boton Actividad 4</button></br></br>
+        <button onclick="saberTamañoBarraTareas()">Mostrar tamaño de barra de tareas</button></br></br>
     
     <script>
         // ACTIVIDAD 1 
@@ -100,6 +100,19 @@
            ventana.location.assign("https://www.google.com/");
            ventana.historial();
        }
+
+
+       // ACTIVIDAD 5
+       /**
+       * Averigua utilizando el objeto screen, el tamaño de la barra de tareas de Windows. Crea un botón en un 
+       * documento html que al pulsar, abra una nueva ventana y muestre esa información.
+       */
+
+       function saberTamañoBarraTareas(){
+           var ventana = window.open("","", "width=500 , height=500");
+           alert("El tamaño de la barra de tareas de Windows es: " + window.screen.availWidth);
+       }
+
 
 
        

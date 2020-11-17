@@ -119,18 +119,18 @@ Perro.queEres();
 
 //USAR SUPER PARA USAR UN METODO DE SU PADRE
 
-class Gato{
-    constructor(nombre){
-        this.nombre=nombre;
+class Gato {
+    constructor(nombre) {
+        this.nombre = nombre;
     }
 
-    hablar(){
+    hablar() {
         console.log(this.nombre + ' hace ruido.');
     }
 }
 
-class Leon extends Gato{
-    hablar(){
+class Leon extends Gato {
+    hablar() {
         super.hablar();
         console.log(this.nombre + ' maulla.');
     }
@@ -145,19 +145,69 @@ leon1.hablar();
 //MAP: almacena pares clave-valor
 var miMapa = new Map();
 miMapa.set(0, "cero");
-miMapa.set(1,"uno");
-for(var [clave,valor] of miMapa){
+miMapa.set(1, "uno");
+for (var [clave, valor] of miMapa) {
     alert(clave + " " + valor);
 
 }
 
 //Mostrará 2 alertas; primero con "0 = cero" u segimdp cpm "1 = uno"
-for(var clave of miMapa.keys()){
+for (var clave of miMapa.keys()) {
     añert(clave);
 }
 
 //Mostrará 2 alertas; primero con "0"  y segundo con "1"
-for (var valor of miMapa.values()){
+for (var valor of miMapa.values()) {
     alert(valor);
+}
+
+
+
+
+/**
+ * <h2>COOKIES</h2>
+ * crear ima cpploe: nombre; (en forma de pares nombre/valor)
+ */
+
+document.cookie = "usuario=Carlos;expires=thu, 20 Nov 2020 12:00:00 UTC; path=/;"; //opcion A
+
+
+//Ver cookie
+function verTodas() {
+    var miCookie = document.cookie;
+    alert(miCookie)
+}
+
+//Crear cookie
+function crearCookie(e) {
+    if (!e) e = window.eventalert;
+    if (e.target.id == "crear1")
+        document.cooie = "usuario = Pedro";
+    else if (e.target.id == "crear2")
+        document.cookie = "DNI=12312321312";
+}
+
+//Modificar cookie
+/*
+function modificarCookie() {
+    document.
+}
+
+
+
+/**
+ * WEB STORAGE 
+ * Alternativa a cookies
+ */
+
+function saludar() {
+    alert("El navegador soporta Webstorage");
+    if (localStorage.getItem("usuario") != null) {
+        document.getElementById("saludo").innerHTML = "Bienvenido " + localStorage.getItem("usuario");
+    } else {
+        var nombre = prompt("¿como se llama?");
+        localStorage.setItem("usuario", nombre);
+        document.getElementById("saludo").innerHTML = "Tu primera visita " + localStorage.getItem("usuario");
+    }
 }
 

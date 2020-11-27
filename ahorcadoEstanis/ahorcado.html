@@ -6,14 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/estilo.css">
+    <!--<link rel="shortcut icon" href="img/favicon.ico">-->
 </head>
 
 <body>
     <div class="juegoDiv container text-center">
         <div id="teclado" class="text-center">
             <h2 id="userInput"></h2>
-            <div class="row">
+            <div class="row keyboard-container">
 
                 <div class="col-12">
                     <button type="button" class="tecla" id="teclaq" value="Q">Q</button>
@@ -28,8 +29,6 @@
                     <button type="button" class="tecla" id="teclap" value="P">P</button>
                 </div>
                 <div class="col-12">
-
-
                     <button type="button" class="tecla" id="teclaa" value="A">A</button>
                     <button type="button" class="tecla" id="teclas" value="S">S</button>
                     <button type="button" class="tecla" id="teclad" value="D">D</button>
@@ -45,16 +44,16 @@
                 <div class="col-12">
                     <button type="button" class="tecla" id="teclaz" value="Z">Z</button>
                     <button type="button" class="tecla" id="teclax" value="X">X</button>
-                    <button type="button" class="tecla" id="teclac" value="C">C</button>
-                    <button type="button" class="tecla" id="teclav" value="V">V</button>
-                    <button type="button" class="tecla" id="teclab" value="B">B</button>
+                    <button type="button" class="tecla" iinfo-panel-containerd="teclac" value="C">C</button>
+                    <button type="button" class="tecla" iinfo-panel-containerd="teclav" value="V">V</button>
+                    <button type="button" class="tecla" iinfo-panel-containerd="teclab" value="B">B</button>
                     <button type="button" class="tecla" id="teclan" value="N">N</button>
                     <button type="button" class="tecla" id="teclam" value="M">M</button>
                 </div>
 
             </div>
         </div>
-        <div class="row">
+        <div class="row info-panel-container">
             <div class="col">
                 <p>Intentos: <span id="intentos"></span> </p>
             </div>
@@ -69,6 +68,10 @@
             <button type="button" class="btn btn-danger" id="comenzar">Comenzar Partida</button>
         </div>
     </div>
+    <br>
+    <ul id="lista">
+
+    </ul>
 
     <script src="ahorcado.js"></script>
 

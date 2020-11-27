@@ -19,7 +19,7 @@ window.onload = function () {
 
     function render(json){
         document.getElementById("ciudad").innerHTML = json.municipio.NOMBRE;
-        document.getElementById("estado").innerHTML = json.statesky.description;
+        document.getElementById("estado").innerHTML = json.stateSky.description;
         document.getElementById("temperatura_actual").innerHTML = json.temperatura_actual + "º";
         document.getElementById("temp_max").innerHTML = json.temperaturas.max + "º";
         document.getElementById("temp_min").innerHTML = json.temperaturas.min + "º";

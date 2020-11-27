@@ -1,0 +1,23 @@
+
+
+.keyboard-container{
+    margin-top: 30px;
+}
+
+.tecla{
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 2px;
+}
+
+.comenzar{
+    margin-top: 20px;
+}
+
+.info-panel-container{
+    padding: 5px;
+    margin-top: 20px;
+    background-color: rgb(235, 232, 232);
+    border-radius: 2px;
+}

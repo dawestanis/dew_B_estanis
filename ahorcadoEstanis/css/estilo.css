@@ -1,12 +1,31 @@
 
+.container h3{
+    color: white;
+}
+
+.texto-titulo{
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom:100px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.container{
+    border: grey;
+    border-radius: 2px;
+    margin-top: 150px;
+}
 
 .keyboard-container{
     margin-top: 30px;
 }
 
 .tecla{
-    background-color: lightcoral;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
     border-radius: 5px;
+    font-weight: bold;
     padding: 1em;
     margin: 2px;
 }
@@ -16,8 +35,33 @@
 }
 
 .info-panel-container{
-    padding: 5px;
-    margin-top: 20px;
     background-color: rgb(235, 232, 232);
     border-radius: 2px;
+    font-size: large;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+#btn-danger {
+    font-weight: bold !important;
+}
+
+#btn-comenzar{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#lista{
+    background-color: rgb(255, 230, 232);
+}
+
+#menu{
+    background-color:rgb(51, 51, 51);
+    border-radius: 5px;
+    padding-top: 10px;
 }

@@ -1,50 +1,50 @@
 [
     {
-        "Título":"Avatar",
-        "Año":"2009",
-        "Genero":"Acción, Aventura, Fantasía",
-        "Director":"James Cameron",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"
+        "titulo":"Avatar",
+        "anio":"2009",
+        "genero":"Acción, Aventura, Fantasía",
+        "director":"James Cameron",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"
     },
     {
-        "Título":"300",
-        "Año":"2006",
-        "Genero":"Acción, Drama, Fantasía",
-        "Director":"Zack Snyder",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg"
+        "titulo":"300",
+        "anio":"2006",
+        "genero":"Acción, Drama, Fantasia",
+        "director":"Zack Snyder",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg"
     },
     {
-        "Título":"Los Vengadores",
-        "Año":"2012",
-        "Genero":"Acción, Ciencia Ficción, Thriller",
-        "Director":"Joss Whedon",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg"
+        "titulo":"Los Vengadores",
+        "anio":"2012",
+        "genero":"Acción, Ciencia Ficción, Thriller",
+        "director":"Joss Whedon",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg"
     },
     {
-        "Título":"El lobo de Wall Street",
-        "Año":"2013",
-        "Genero":"Biografico, Comedia, Crimen",
-        "Director":"Martin Scorse",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
+        "titulo":"El lobo de Wall Street",
+        "anio":"2013",
+        "genero":"Biografico, Comedia, Crimen",
+        "director":"Martin Scorse",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
     },
     {
-        "Título":"Juego de Tronos",
-        "Año":"2011",
-        "Genero":"Aventura, Drama, Fantasía",
-        "Director":"David Benihoff, D.B. Weiss",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BMjM5OTQ1MTY5Nl5BMl5BanBnXkFtZTgwMjM3NzMxODE@._V1_SX300.jpg"
+        "titulo":"Juego de Tronos",
+        "anio":"2011",
+        "genero":"Aventura, Drama, Fantasía",
+        "director":"David Benihoff, D.B. Weiss",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BMjM5OTQ1MTY5Nl5BMl5BanBnXkFtZTgwMjM3NzMxODE@._V1_SX300.jpg"
     },
     {
-        "Título":"Vikingos",
-        "Año":"2013",
-        "Genero":"Acción, Drama, Historia",
-        "Director":"Michael Hirst",
-        "Lenguaje":"Ingles, Español",
-        "Poster":"http://ia.media-imdb.com/images/M/MV5BOTEzNzI3MDc0N15BMl5BanBnXkFtZTgwMzk1MzA5NzE@._V1_SX300.jpg"
+        "titulo":"Vikingos",
+        "anio":"2013",
+        "genero":"Acción, Drama, Historia",
+        "director":"Michael Hirst",
+        "lenguaje":"Ingles, Español",
+        "poster":"http://ia.media-imdb.com/images/M/MV5BOTEzNzI3MDc0N15BMl5BanBnXkFtZTgwMzk1MzA5NzE@._V1_SX300.jpg"
     }
 ]

@@ -11,8 +11,21 @@
 </head>
 
 <body>
-    <div class="juegoDiv container text-center">
+
+    <div id="menu" class="container text-center">
+        <label for="jugador1"><h3>Jugador 1</h3></label>
+        <input type="text" id="jugador1" name="jugador1" placeholder="Escribe tu nombre aquí!"><br/>
+        <label for="jugador2"><h3>Jugador 2</h3></label>
+        <input type="text" id="jugador2" name="jugador2" placeholder="Escribe tu nombre aquí!"><br/>
+        <!--<input type="text" id="numeroRonda" name="numero de ronda"><br/>-->
+        <button type="button" id="btn-comenzar">Comenzar Partida</button>
+    </div>
+    
+    <div id="juego" class="juegoDiv container text-center d-none">
+        <canvas id="canvas"></canvas>
+        <br>
         <div id="teclado" class="text-center">
+            <h1 id="titulo" class="texto-titulo text-center">El Ahorcado</h1>
             <h2 id="userInput"></h2>
             <div class="row keyboard-container">
 
@@ -65,7 +78,10 @@
             </div>
         </div>
         <div class="comenzar">
+            <p id="turnoJugador"></p>
             <button type="button" class="btn btn-danger" id="comenzar">Comenzar Partida</button>
+            <button type="button" class="btn btn-warning d-none" id="reiniciar">Nueva Partida</button>
+
         </div>
     </div>
     <br>

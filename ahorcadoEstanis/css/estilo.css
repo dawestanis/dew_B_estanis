@@ -10,6 +10,14 @@
     text-shadow: 1px 1px 2px black;
 }
 
+.texto-titulo-inicio{
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom:10px;
+    text-shadow: 1px 1px 2px black;
+}
+
 .container{
     border: grey;
     border-radius: 2px;

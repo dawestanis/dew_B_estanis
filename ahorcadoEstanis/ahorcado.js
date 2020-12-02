@@ -19,7 +19,7 @@ class Partida {
     /////// METODOS DE LA CLASE PARTIDA /////////
     ponerBarra() {
         for (var i = 0; i < this.palabra.length; i++) {
-            this.palabraEnProceso += "_";
+            this.palabraEnProceso += "-";
         }
     }
 
@@ -64,7 +64,7 @@ btnComenzar.addEventListener('click', function(){
 
     if(inputJugador1.value != "" && inputJugador2.value != ""){
         teclas.forEach(element => {
-            element.addEventListener('click', escribir); //recorremos los elemntos teclas y le asignamos un listener, para que cuando hagamos click realice una acción
+            element.addEventListener('click', escribir); //recorremos los elementos teclas y le asignamos un listener, para que cuando hagamos click realice una acción
             element.removeEventListener('click', apostarLetra);
 
         });
@@ -88,9 +88,11 @@ function escribir(elemento) {
 
 
 let partida = null;
-
 botonComenzar.addEventListener('click', comenzarPartida);
 
+
+
+//////////////////// FUNCION COMENZAR PARTIDA ////////////////////////
 function comenzarPartida() { //funcion que nos permite comenzar la partida
     if (userInput.innerText != "") { //PONER REGEX
         let j1 = new Jugador(inputJugador1.value);
@@ -113,6 +115,7 @@ function comenzarPartida() { //funcion que nos permite comenzar la partida
     }
 }
 
+////////////////////// FUNCION PARA APOSTAR UNA LETRA //////////////////////////
 function apostarLetra(elemento) { //Funcion que comprueba si la letra que insertamos esta o no en la palabra oculta
     let tecla = elemento.target; // Asignamos el boton que se está presionando, a la variable tecla.
     let letrasUsadas = partida.getLetraUsadas();
@@ -126,10 +129,10 @@ function apostarLetra(elemento) { //Funcion que comprueba si la letra que insert
             for (let i in partida.palabra) { 
                 if (letra == partida.palabra.toUpperCase().charAt(i)) {
                     resultado += letra;
-                } else if (partida.palabraEnProceso.charAt(i) != "_") {
+                } else if (partida.palabraEnProceso.charAt(i) != "-") {
                     resultado += partida.palabraEnProceso.charAt(i)
                 } else {
-                    resultado += "_"
+                    resultado += "-"
                 }
             }
             partida.palabraEnProceso = resultado;
@@ -172,18 +175,22 @@ function apostarLetra(elemento) { //Funcion que comprueba si la letra que insert
     }
 }
 
+////////////////////// FUNCIÓN PARA COMPROBAR SI HA FINALIZADO PARTIDA //////////////////////
 function comprobarFinPartida(){
     return(partida.palabraEnProceso == partida.palabra || partida.intentosRestantes==0);
 }
 
+
+
+///////////////// FUNCIÓN PARA ACTUALIZAR DATOS /////////////////////
 function actualizarDatos() { //Funcion que nos permite actualizar los datos
     intentos.innerText = partida.intentosRestantes;
     letrasUsadas.innerText = partida.getLetraUsadas();
     palabras.innerText = partida.palabraEnProceso;
     dibujarCanvas(partida.intentosRestantes)
 }
+
 function reiniciarDatos() { //Funcion que nos permite actualizar los datos
- 
     intentos.innerText = "";
     letrasUsadas.innerText = "";
     palabras.innerText = "";
@@ -205,9 +212,7 @@ function verLista(){
 verLista();
 
 
-/////////////////////////////////
-//CANVAS
-/////////////////////////////////
+/////////////////////////// FUNCIÓN QUE IMPLEMENTA EL CANVAS DEL AHORCADO EN PANTALLA ////////////////////////
 function cargaContextoCanvas(idCanvas){
     var elemento = document.getElementById(idCanvas);
     if(elemento && elemento.getContext){

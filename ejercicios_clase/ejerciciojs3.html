@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio3</title>
+</head>
+<body>
+    <!-- Crear dos input de números y un botón, al pulsar el botón, mostrar en un alert quien es el mayor de los dos. -->
+    <input type="text" id="numero1">
+    <input type="text" id="numero2">
+    <button type="button" onclick="mostrarMayor()">Mostrar Mayor</button>
+
+
+
+    <script>
+        function mostrarMayor(){
+            var numero1 = document.querySelector('#numero1');
+            var numero2 = document.querySelector('#numero2');
+            if(parseInt(numero1.value) > parseInt(numero2.value)){
+                alert('El numero ' + numero1.value + ' es el mayor.');
+            }else{
+                alert('El numero ' + numero2.value + ' es el mayor.');
+            }
+        }
+    </script>
+</body>
+</html>

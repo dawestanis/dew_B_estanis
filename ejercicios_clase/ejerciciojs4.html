@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio4</title>
+</head>
+
+<body>
+    <!-- Crear un botón que al pulsarlo genere una lista de 10 números aleatorios en un select vacio. Al pulsar de nuevo, se reseteara la lista. -->
+    <form action="">
+        <!--
+        <label for="numeros">Lista de numeros</label>
+
+        <select name="numeros" id="numeros">
+            <option value="numero"></option>
+
+        </select>
+
+        <button type="button" onclick="generarNumeros()">Generar Lista de Numeros</button>
+    -->
+
+    <button type="button" onclick="generarNumeros()">Generar lista</button>
+    <select id="elementos">
+
+    </select>
+    </form>
+
+
+
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function generarNumeros() {
+
+            let elementos = document.getElementById("elementos");
+
+            let opcionesGeneradas = "";
+            for (let i = 0; i < 10; i++) {
+                opcionesGeneradas += "<option>" + getRandomInt(1, 100) + "</option>";
+            }
+
+            elementos.innerHTML = opcionesGeneradas;
+
+        }
+        
+
+        /*
+            function generarNumeros() {
+            var aleatorio = Math.round(Math.random() * 10);
+            var lista = [];
+            lista.forEach(element => {
+                while (lista.length < 10) {
+                    element += aleatorio;
+                }
+
+            });
+            console.log(lista)
+            addOptions('numeros', lista);
+        }
+
+
+        function addOptions(domElement, array) {
+            var select = document.getElementsByName(domElement)[0];
+
+            for (value in array) {
+                var option = document.createElement("option");
+                option.text = array[value];
+                select.add(option);
+            }
+        }
+        */
+    </script>
+</body>
+
+</html>

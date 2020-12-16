@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio</title>
+</head>
+
+<body>
+    <form action="post">
+        <input type="radio" name="eleccion" value="opcion1" checked onclick="muestraOpcion()">Opcion1<br />
+        <input type="radio" name="eleccion" value="opcion2" onclick="muestraOpcion()">Opcion2<br />
+    </form>
+
+
+
+
+
+
+    <script>
+        function muestraOpcion() {
+            var opciones = document.getElementsByName("eleccion");
+           
+            for (let i = 0; i < opciones.length; i++) {
+                if (opciones[i].checked) {
+                    alert(opciones[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

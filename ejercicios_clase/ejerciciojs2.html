@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio2</title>
+</head>
+
+<body>
+    <!-- Crear un input y un button, cuando le demos al boton, se añadira el texto que hemos 
+        puesto en el input en un div vacio. Recuerda se añadirá el texto, no se machaca lo 
+        que haya en el div.-->
+
+        <div id="mostrar_texto"></div>
+
+    <form>
+        <input type="text" id="texto" />
+        <button type="button" onclick="aniadirTexto()">Añadir texto</button>
+    </form>
+
+
+    <script>
+        function aniadirTexto() {
+
+            var texto = document.getElementById("texto")
+            var mostrar = document.getElementById("mostrar_texto")
+
+            mostrar.innerHTML += texto.value + "<br>";
+
+        }
+    </script>
+</body>
+
+</html>
